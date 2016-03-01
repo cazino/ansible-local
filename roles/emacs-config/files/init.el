@@ -1,13 +1,5 @@
 
 
-(setenv "PATH"
-  (concat
-   "/home/emmanuel/.local/bin" ";"
-   (getenv "PATH")
-  )
-)
-
-
 (mapc (apply-partially 'add-to-list 'load-path)
       '("~/.emacs.d/use-package/"))
 

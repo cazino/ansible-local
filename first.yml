@@ -7,7 +7,6 @@
   roles:
     - git
     - python-2
-#    - python-3
 
 - name: User pip install an bash config files
   hosts: all
