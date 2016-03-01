@@ -1,0 +1,9 @@
+- name: Install python 2 dev
+  action: apt pkg=python-dev state=latest
+
+- name : Install setuptools
+  action: apt pkg=python-setuptools state=latest
+
+- name : Install pip
+  action: apt pkg=python-pip state=latest
+

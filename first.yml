@@ -1,0 +1,23 @@
+---
+- name: Git - Python
+  hosts: all
+  become: yes
+  become_method: sudo
+
+  roles:
+    - git
+    - python-2
+#    - python-3
+
+- name: User pip install an bash config files
+  hosts: all
+  remote_user: "{{ remote_user }}"
+  roles:
+    - local-pip-install
+
+
+
+
+
+
+

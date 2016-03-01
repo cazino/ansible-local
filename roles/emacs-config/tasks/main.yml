@@ -1,0 +1,19 @@
+- name: Emacs color theme solarized
+  git:
+    repo=https://github.com/sellout/emacs-color-theme-solarized.git
+    dest=/home/emmanuel/.emacs.d/emacs-color-theme-solarized
+
+- name: Emacs use-package
+  git:
+    repo=https://github.com/jwiegley/use-package.git
+    dest=/home/emmanuel/.emacs.d/use-package
+
+- name: Emacs init.el
+  template:
+    src=roles/emacs-config/files/init.el
+    dest=/home/emmanuel/.emacs.d/init.el
+     
+- name: Git uses Emacs
+  lineinfile:
+    dest=/home/emmanuel/.bashrc
+    line="export EDITOR='emacs --maximized'"

@@ -1,0 +1,6 @@
+- name: Install python 3 dev
+  action: apt pkg=python3-dev state=latest
+
+- name : Install flake8
+  action: apt pkg=python3-flake8 state=latest
+

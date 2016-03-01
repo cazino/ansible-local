@@ -1,0 +1,10 @@
+- name: Install git (last version)
+  action: apt pkg=git state=latest
+
+- name: Copy git config files
+  copy:
+     src="{{ item }}"
+     dest=/home/{{ remote_user }}/
+  with_items:
+    - .gitignore_global
+    - .gitconfig

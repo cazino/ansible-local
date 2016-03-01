@@ -1,0 +1,7 @@
+---
+- name: Second play book - regular user stuff
+  hosts: all
+  remote_user: "{{ remote_user }}"
+  roles:
+    - pip-packages
+    - emacs-config

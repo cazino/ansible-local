@@ -1,0 +1,7 @@
+- name: Pip install pip
+  pip: name=pip extra_args='--user'
+
+- name: Pip in $PATH
+  lineinfile:
+    dest=/home/{{ remote_user }}/.bashrc
+    line="export PATH=~/.local/bin:$PATH"

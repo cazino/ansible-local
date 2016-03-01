@@ -1,0 +1,20 @@
+- name: Pip install virtualenv
+  pip: name=virtualenv extra_args='--user'
+
+
+- name: Pip install virtualenvwrapper
+  pip: name=virtualenvwrapper extra_args='--user'
+
+
+- name: Virtualenvwrapper bashrc stuff
+  lineinfile:
+    dest=/home/{{ remote_user }}/.bashrc
+    line="export WORKON_HOME=$HOME/progs/envs"
+
+- name: Virtualenvwrapper bashrc stuff
+  lineinfile:
+    dest=/home/{{ remote_user }}/.bashrc
+    line=". $HOME/.local/bin/virtualenvwrapper.sh"
+
+
+

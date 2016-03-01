@@ -1,0 +1,12 @@
+
+- name: Install software properties
+  action: apt pkg=software-properties-common state=present
+
+- name: Add ansible ppa
+  action: apt_repository repo='ppa:ansible/ansible'
+
+- name: Update apt cache
+  action: apt update_cache=yes
+
+- name: Install ansible (last version)
+  action: apt pkg=ansible state=latest
