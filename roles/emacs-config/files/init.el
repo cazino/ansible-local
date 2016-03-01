@@ -1,13 +1,11 @@
-;; Make the GUI version gets the right path
-;; read in PATH
+
+
 (setenv "PATH"
   (concat
    "/home/emmanuel/.local/bin" ";"
    (getenv "PATH")
   )
 )
-
-
 
 
 (mapc (apply-partially 'add-to-list 'load-path)
@@ -19,21 +17,24 @@
 (require 'package)
 (require 'use-package)
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
 (use-package flycheck
+  :ensure t
   :config
   (global-flycheck-mode))
 
+(use-package python-environment
+  :ensure t
+)
 
 (use-package jedi
+  :ensure t
   :config
+  (jedi:install-server)
   (add-hook 'python-mode-hook 'jedi:setup)
   (setq jedi:complete-on-dot t))
-
-;;(add-hook 'after-init-hook (lambda () (load "/home/emmanuel/.emacs.d/after-init.el")))
-
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -54,4 +55,3 @@
 
 (fset 'ipdb
    "import ipdb; ipdb.set_trace()")
-

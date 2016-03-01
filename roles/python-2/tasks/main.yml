@@ -7,3 +7,6 @@
 - name : Install pip
   action: apt pkg=python-pip state=latest
 
+- name : Install virtualenv
+  action: apt pkg=python-virtualenv state=latest
+
