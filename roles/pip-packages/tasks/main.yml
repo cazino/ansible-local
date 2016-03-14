@@ -5,11 +5,14 @@
 - name: Pip install virtualenvwrapper
   pip: name=virtualenvwrapper extra_args='--user'
 
+- name: virtualenvwrapper directory
+  file:
+    path=/home/{{ remote_user }}/envs state=directory
 
 - name: Virtualenvwrapper bashrc stuff
   lineinfile:
     dest=/home/{{ remote_user }}/.bashrc
-    line="export WORKON_HOME=$HOME/progs/envs"
+    line="export WORKON_HOME=$HOME/envs"
 
 - name: Virtualenvwrapper bashrc stuff
   lineinfile:
