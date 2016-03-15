@@ -7,6 +7,7 @@
   roles:
     - git
     - python-2
+    - emacs
 
 - name: User pip install an bash config files
   hosts: all
