@@ -1,7 +1,6 @@
 - name: Pip install virtualenv
   pip: name=virtualenv extra_args='--user'
 
-
 - name: Pip install virtualenvwrapper
   pip: name=virtualenvwrapper extra_args='--user'
 
@@ -9,15 +8,17 @@
   file:
     path=/home/{{ remote_user }}/envs state=directory
 
-- name: Virtualenvwrapper bashrc stuff
+- name: Virtualenvwrapper directory in bashrc
   lineinfile:
     dest=/home/{{ remote_user }}/.bashrc
     line="export WORKON_HOME=$HOME/envs"
 
-- name: Virtualenvwrapper bashrc stuff
+- name: Virtualenvwrapper loading in bashrc
   lineinfile:
     dest=/home/{{ remote_user }}/.bashrc
     line=". $HOME/.local/bin/virtualenvwrapper.sh"
 
-
-
+- name: Virtualenvwrapper postactivate hook
+  lineinfile:
+    dest=/home/{{ remote_user }}/envs/postactivate
+    line="cd $VIRTUAL_ENV"

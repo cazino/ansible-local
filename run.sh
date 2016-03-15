@@ -2,5 +2,5 @@
 
 ansible-playbook -i hosts --ask-sudo-pass first.yml
 . ~/.bashrc
-ansible-playbook -i hosts --ask-sudo-pass second.yml
-
+ansible-playbook -i hosts second.yml
+. ~/.bashrc
