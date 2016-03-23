@@ -5,6 +5,7 @@
   copy:
      src="{{ item }}"
      dest=/home/{{ remote_user }}/
+     backup=yes
   with_items:
     - .gitignore_global
     - .gitconfig
