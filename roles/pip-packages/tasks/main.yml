@@ -6,19 +6,19 @@
 
 - name: virtualenvwrapper directory
   file:
-    path=/home/{{ remote_user }}/envs state=directory
+    path=/home/emmanuel/envs state=directory
 
 - name: Virtualenvwrapper directory in bashrc
   lineinfile:
-    dest=/home/{{ remote_user }}/.bashrc
+    dest=/home/emmanuel/.bashrc
     line="export WORKON_HOME=$HOME/envs"
 
 - name: Virtualenvwrapper loading in bashrc
   lineinfile:
-    dest=/home/{{ remote_user }}/.bashrc
+    dest=/home/emmanuel/.bashrc
     line=". $HOME/.local/bin/virtualenvwrapper.sh"
 
 - name: Virtualenvwrapper postactivate hook
   lineinfile:
-    dest=/home/{{ remote_user }}/envs/postactivate
+    dest=/home/emmanuel/envs/postactivate
     line="cd $VIRTUAL_ENV"

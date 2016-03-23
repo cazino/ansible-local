@@ -6,5 +6,5 @@
 
 - name: Virtualenvwrapper alias for python 3
   lineinfile:
-    dest=/home/{{ remote_user }}/.bashrc
+    dest=/home/emmanuel/.bashrc
     line='alias mkvirtualenv3="mkvirtualenv -p python3"'

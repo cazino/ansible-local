@@ -4,7 +4,7 @@
 - name: Copy git config files
   copy:
      src="{{ item }}"
-     dest=/home/{{ remote_user }}/
+     dest=/home/emmanue/
      backup=yes
   with_items:
     - .gitignore_global

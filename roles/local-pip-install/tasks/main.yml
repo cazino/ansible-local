@@ -3,5 +3,5 @@
 
 - name: Pip in $PATH
   lineinfile:
-    dest=/home/{{ remote_user }}/.bashrc
+    dest=/home/emmanuel/.bashrc
     line="export PATH=~/.local/bin:$PATH"

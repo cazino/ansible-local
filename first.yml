@@ -1,16 +1,29 @@
 ---
-- name: Git - Python
+- name: Git - Python - emacs
   hosts: all
   become: yes
   become_method: sudo
-
   roles:
     - git
     - python-2
     - python-3
     - emacs
 
+- name: Tmux
+  hosts: all
+  become: yes
+  become_method: sudo
+  become_user: emmanuel
+  roles:
+    - tmux
+
 - name: User pip install an bash config files
+  hosts: all
+  remote_user: "{{ remote_user }}"
+  roles:
+    - local-pip-install
+
+- name: Tmux configuration
   hosts: all
   remote_user: "{{ remote_user }}"
   roles:
