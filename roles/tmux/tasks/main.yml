@@ -14,3 +14,4 @@
   template:
     src=roles/tmux/files/tmux.conf
     dest=/home/emmanuel/.tmux.conf
+    backup=yes

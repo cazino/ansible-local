@@ -39,6 +39,12 @@
        (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 )
 
+(use-package json-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -12,6 +12,7 @@
   template:
     src=roles/emacs-config/files/init.el
     dest=/home/emmanuel/.emacs.d/init.el
+    backup=yes
      
 - name: Git uses Emacs
   lineinfile:
