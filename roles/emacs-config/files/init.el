@@ -51,7 +51,7 @@
   (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
   )
 
-(use-package mutli-term
+(use-package multi-term
   :ensure t
   :config
 )
