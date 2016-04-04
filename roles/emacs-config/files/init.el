@@ -45,6 +45,17 @@
   (add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
 )
 
+(use-package coffee-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+  )
+
+(use-package mutli-term
+  :ensure t
+  :config
+)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
