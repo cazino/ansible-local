@@ -9,8 +9,10 @@
 (require 'package)
 (require 'use-package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+(package-list-packages)
 
 (use-package flycheck
   :ensure t
@@ -54,6 +56,12 @@
 (use-package multi-term
   :ensure t
   :config
+  )
+
+(use-package groovy-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
 )
 
 (custom-set-variables
