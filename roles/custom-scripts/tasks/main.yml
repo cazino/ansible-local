@@ -1,13 +1,24 @@
-- name: Make custom bin directory
-  file: path={{ ansible_env.HOME }}/bin state=directory
+- name: Set home bin location
+  set_fact: home_bin={{ ansible_env.HOME }}/bin
+
+- name: Make home bin directory
+  file: path={{ home_bin }} state=directory
+
+
 
 - name: Add custom bin dir in PATH
   lineinfile:
     dest=/home/emmanuel/.bashrc
-    line="export PATH=$PATH:{{ ansible_env.HOME }}/bin"
+    line="export PATH=$PATH:{{ home_bin }}"
 
 - name: Config git repo script
   template:
     src=config-gitrepo.j2
-    dest={{ ansible_env.HOME }}/bin/config-gitrepo mode="u=rwx,g=r,o=r"
+    dest={{ home_bin }}/config-gitrepo mode="u=rwx,g=r,o=r"
+
+- name: Clean build script
+  copy:
+    src=clean-build.sh
+    dest={{ home_bin }}/clean-build mode="u=rwx,g=r,o=r"
+
 
