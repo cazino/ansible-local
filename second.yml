@@ -5,3 +5,4 @@
   roles:
     - pip-packages
     - emacs-config
+    - custom-scripts
