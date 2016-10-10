@@ -5,8 +5,7 @@
   become_method: sudo
   roles:
     - git
-    - python-2
-    - python-3
+    - python
     - emacs
 
 - name: Tmux
@@ -22,14 +21,6 @@
   remote_user: "{{ remote_user }}"
   roles:
     - local-pip-install
-
-- name: Tmux configuration
-  hosts: all
-  remote_user: "{{ remote_user }}"
-  roles:
-    - local-pip-install
-
-
 
 
 

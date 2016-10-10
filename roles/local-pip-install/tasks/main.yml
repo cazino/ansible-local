@@ -1,5 +1,5 @@
 - name: Pip install pip
-  pip: name=pip extra_args='--user'
+  pip: name=pip executable={{ pip_version }} extra_args='--user' state='latest'
 
 - name: Pip in $PATH
   lineinfile:

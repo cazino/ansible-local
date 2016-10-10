@@ -1,8 +1,11 @@
 - name: Pip install virtualenv
-  pip: name=virtualenv extra_args='--user'
+  pip: name=virtualenv executable={{ pip_version }} extra_args='--user' state='latest'
 
 - name: Pip install virtualenvwrapper
-  pip: name=virtualenvwrapper extra_args='--user'
+  pip: name=virtualenvwrapper executable={{ pip_version }} extra_args='--user' state='latest'
+
+- name: Pip install flake8
+  pip: name=flake8 executable={{ pip_version }} extra_args='--user' state='latest'
 
 - name: virtualenvwrapper directory
   file:
