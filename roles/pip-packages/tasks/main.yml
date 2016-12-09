@@ -7,6 +7,10 @@
 - name: Pip install flake8
   pip: name=flake8 executable={{ pip_version }} extra_args='--user' state='latest'
 
+- name: Configuration file for flake8
+  copy:
+      src=flake8 dest={{ ansible_env.HOME }}/.config/flake8
+
 - name: virtualenvwrapper directory
   file:
     path=/home/emmanuel/envs state=directory

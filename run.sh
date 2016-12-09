@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -xue
 
 # USAGE : run.sh nameofinventory
 
