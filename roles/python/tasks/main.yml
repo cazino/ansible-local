@@ -1,8 +1,11 @@
 - name: Install python
   action: apt pkg={{ python_version }}-dev state=latest
+  become: yes
 
 - name : Install setuptools
   action: apt pkg={{ python_version }}-setuptools state=latest
+  become: yes
 
 - name : Install pip
   action: apt pkg={{ python_version }}-pip state=latest
+  become: yes

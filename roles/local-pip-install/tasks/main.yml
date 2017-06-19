@@ -3,5 +3,5 @@
 
 - name: Pip in $PATH
   lineinfile:
-    dest=/home/emmanuel/.bashrc
+    dest={{homedir}}/.bashrc
     line="export PATH=~/.local/bin:$PATH"

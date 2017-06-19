@@ -13,19 +13,29 @@
 
 - name: virtualenvwrapper directory
   file:
-    path=/home/emmanuel/envs state=directory
+    path={{homedir}}/envs state=directory
 
 - name: Virtualenvwrapper directory in bashrc
   lineinfile:
-    dest=/home/emmanuel/.bashrc
+    dest={{homedir}}/.bashrc
     line="export WORKON_HOME=$HOME/envs"
+
+- name: Virtualenvwrapper uses python3
+  lineinfile:
+    dest={{homedir}}/.bashrc
+    line="export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3"
 
 - name: Virtualenvwrapper loading in bashrc
   lineinfile:
-    dest=/home/emmanuel/.bashrc
+    dest={{homedir}}/.bashrc
     line=". $HOME/.local/bin/virtualenvwrapper.sh"
+
+- name: virtualenvwrapper postactivate hook file
+  file:
+    path={{homedir}}/envs/postactivate
+    state=touch
 
 - name: Virtualenvwrapper postactivate hook
   lineinfile:
-    dest=/home/emmanuel/envs/postactivate
+    dest={{homedir}}/envs/postactivate
     line="cd $VIRTUAL_ENV"

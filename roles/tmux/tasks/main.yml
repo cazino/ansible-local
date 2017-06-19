@@ -1,17 +1,15 @@
 - name: Install tmux (last version)
   become: yes
-  become_method: sudo
-  become_user: root
   action: apt pkg=tmux state=latest
   
 
 - name: Install Tmux plugin manager
   git:
     repo=https://github.com/tmux-plugins/tpm.git
-    dest=/home/emmanuel/.tmux/plugins/tpm
+    dest={{homedir}}/.tmux/plugins/tpm
 
 - name: Tmux config file
   template:
     src=roles/tmux/files/tmux.conf
-    dest=/home/emmanuel/.tmux.conf
+    dest={{homedir}}/.tmux.conf
     backup=yes

@@ -1,5 +1,7 @@
 - name: Install emacs (last version)
   action: apt pkg=emacs state=latest
+  become: yes
 
 - name: Install dpkg-dev-el  (last version)
   action: apt pkg=dpkg-dev-el  state=latest
+  become: yes
