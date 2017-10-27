@@ -1,5 +1,3 @@
-
-
 (mapc (apply-partially 'add-to-list 'load-path)
       '("~/.emacs.d/use-package/"))
 
@@ -63,6 +61,9 @@
   :config
   (add-to-list 'auto-mode-alist '("Jenkinsfile$" . groovy-mode))
 )
+
+(use-package org
+  :ensure t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
