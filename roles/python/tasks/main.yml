@@ -1,11 +1,31 @@
-- name: Install python
-  action: apt pkg={{ python_version }}-dev state=latest
+- name: Install python 2
+  action: apt pkg=python state=latest
   become: yes
 
-- name : Install setuptools
-  action: apt pkg={{ python_version }}-setuptools state=latest
+- name: Install python 2 dev
+  action: apt pkg=python-dev state=latest
   become: yes
 
-- name : Install pip
-  action: apt pkg={{ python_version }}-pip state=latest
+- name : Install python2 setuptools
+  action: apt pkg=python-setuptools state=latest
+  become: yes
+
+- name : Install python2 pip
+  action: apt pkg=python-pip state=latest
+  become: yes
+
+- name: Install python 3
+  action: apt pkg=python3 state=latest
+  become: yes
+
+- name: Install python 3 dev
+  action: apt pkg=python3-dev state=latest
+  become: yes
+
+- name : Install python3 setuptools
+  action: apt pkg=python3-setuptools state=latest
+  become: yes
+
+- name : Install python3 pip
+  action: apt pkg=python3-pip state=latest
   become: yes

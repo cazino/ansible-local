@@ -1,0 +1,3 @@
+# This is not mandatory, localhost is known without any declaration in a ansible hosts file
+
+localhost ansible_connection=local email=emmanuel.cazenave@arkena.com pip_version=pip3 homedir=/home/emmanuel homebin=/home/emmanuel/.local/bin
