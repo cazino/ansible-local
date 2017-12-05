@@ -4,4 +4,5 @@
   roles:
     - pip-packages
     - emacs-config
+    - git-config
     - custom-scripts

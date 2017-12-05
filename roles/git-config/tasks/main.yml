@@ -1,0 +1,8 @@
+- name: Copy git config files
+  copy:
+      src="{{ item }}"
+      dest={{ ansible_env.HOME }}
+      backup=yes
+  with_items:
+      - .gitignore_global
+      - .gitconfig

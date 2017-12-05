@@ -1,3 +1,3 @@
 # This is not mandatory, localhost is known without any declaration in a ansible hosts file
 
-localhost ansible_connection=local email=emmanuel.cazenave@arkena.com homedir=/home/emmanuel homebin=/home/emmanuel/.local/bin
+localhost ansible_connection=local email=ecazenave@entrouvert.com homedir=/home/cazino homebin=/home/cazino/.local/bin
