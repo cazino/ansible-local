@@ -1,0 +1,4 @@
+- name: ll command
+  lineinfile:
+    dest={{homedir}}/.bashrc
+    line="alias ll='ls -la'"

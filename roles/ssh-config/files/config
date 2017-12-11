@@ -1,0 +1,3 @@
+Host jenkins
+    HostName jenkins.entrouvert.org
+    User ecazenave

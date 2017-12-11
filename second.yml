@@ -6,3 +6,5 @@
     - emacs-config
     - git-config
     - custom-scripts
+    - alias
+    - ssh-config

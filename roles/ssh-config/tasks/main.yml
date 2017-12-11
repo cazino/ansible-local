@@ -1,0 +1,5 @@
+- name: SSH config files
+  copy:
+      src="config"
+      dest="{{ ansible_env.HOME }}/.ssh/config"
+      backup=yes
