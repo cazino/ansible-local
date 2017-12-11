@@ -1,9 +1,3 @@
-- name: Pip install pip2
-  pip: name=pip executable=pip2 extra_args='--user' state='latest'
-
-- name: Pip install pip3
-  pip: name=pip executable=pip3 extra_args='--user' state='latest'
-
 - name: Pip in $PATH
   lineinfile:
     dest={{homedir}}/.bashrc

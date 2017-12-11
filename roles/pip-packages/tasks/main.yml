@@ -1,11 +1,11 @@
-- name: Pip3 install virtualenv
-  pip: name=virtualenv executable=pip3 extra_args='--user' state='latest'
+- name: Pip install virtualenv
+  pip: name=virtualenv extra_args='--user' state='latest'
 
-- name: Pip3 install virtualenvwrapper
-  pip: name=virtualenvwrapper executable=pip3 extra_args='--user' state='latest'
+- name: Pip install virtualenvwrapper
+  pip: name=virtualenvwrapper extra_args='--user' state='latest'
 
-- name: Pip3 install flake8
-  pip: name=flake8 executable=pip3 extra_args='--user' state='latest'
+- name: Pip install flake8
+  pip: name=flake8 extra_args='--user' state='latest'
 
 - name: Configuration file for flake8
   copy:
@@ -20,10 +20,10 @@
     dest={{homedir}}/.bashrc
     line="export WORKON_HOME=$HOME/envs"
 
-- name: Virtualenvwrapper uses python3
+- name: Virtualenvwrapper uses python
   lineinfile:
     dest={{homedir}}/.bashrc
-    line="export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3"
+    line="export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python"
 
 - name: Virtualenvwrapper loading in bashrc
   lineinfile:
