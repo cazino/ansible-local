@@ -1,3 +1,4 @@
 Host jenkins
-    HostName jenkins.entrouvert.org
+    HostName jenkins.didier.entrouvert.org
     User ecazenave
+    ProxyJump ecazenave@didier.entrouvert.org
