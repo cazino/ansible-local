@@ -81,7 +81,19 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; init.el is not a package
+(setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+
 (load-theme 'solarized t)
 
 (fset 'ipdb
-   "import ipdb; ipdb.set_trace()")
+      "import ipdb; ipdb.set_trace()")
+
+(fset 'pdb
+      "import pdb; pdb.set_trace()")
+
+(fset 'rdb
+   "import celery.contrib.rdb; celery.contrib.rdb.set_trace()")
+
+(fset 'absimport
+   "from __future__ import absolute_import")
