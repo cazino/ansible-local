@@ -97,3 +97,14 @@
 
 (fset 'absimport
    "from __future__ import absolute_import")
+
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+
+(defun my-css-mode-hook ()
+  (setq tab-width 4)
+  (setq css-indent-offset 4)
+  (setq indent-tabs-mode t))
+
+(add-hook 'css-mode-hook 'my-css-mode-hook)
+(add-hook 'css-mode-hook 'whitespace-mode)
+(add-hook 'groovy-mode-hook 'whitespace-mode)

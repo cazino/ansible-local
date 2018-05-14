@@ -5,3 +5,14 @@
 - name: Install dpkg-dev-el  (last version)
   action: apt pkg=dpkg-dev-el  state=latest
   become: yes
+
+
+# Mails
+- name: Install mu4e
+  action: apt pkg=mu4e  state=latest
+  become: yes
+
+# Mails
+- name: Install isync
+  action: apt pkg=isync  state=latest
+  become: yes
