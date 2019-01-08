@@ -1,7 +1,11 @@
 - name: Install tmux (last version)
+  apt:
+    name: "{{ item }}"
+    state: latest
+    with_items:
+      - tmux
+      - xclip
   become: yes
-  action: apt pkg=tmux state=latest
-  
 
 - name: Install Tmux plugin manager
   git:
