@@ -21,6 +21,10 @@
   :ensure t
 )
 
+(use-package realgud
+  :ensure t
+)
+
 (use-package jedi
   :ensure t
   :config
